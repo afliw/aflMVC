@@ -38,6 +38,7 @@ class Router {
     }
 
     private static function removePath($requestUrl){
+	    if(BASE_URL == "/") return $requestUrl;
 		if(substr(BASE_URL,-1) == '/' && substr($requestUrl,-1) !== '/')
 			$requestUrl = $requestUrl . "/";
         return str_replace(BASE_URL,"",$requestUrl);
