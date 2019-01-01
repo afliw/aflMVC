@@ -1,0 +1,15 @@
+# Remember to enable AllowRewrite in the <Directory> directive in Apache configuration file.
+FallbackResource /index.php
+
+# Options +FollowSymLinks
+# RewriteEngine On
+# RewriteBase /dev/aflMVC/
+# RewriteRule ^(js|css|img|svc)($|/) - [L]
+# RewriteRule ^(.*)$ index.php [L]
+
+# **** Alternative method - Doesn't work with other mime types but html/php files. ****
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^ index.php [QSA,L]
+# *************************************************************************************
